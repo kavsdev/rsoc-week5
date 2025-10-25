@@ -22,21 +22,33 @@
 3. Build OpenROAD
    
    ```shell
-   ./build_openroad.sh --local
+   ./build_openroad.sh --local --threads 1
    ```
    
-   NOTE: The local build failed so i resorted to using prebuilt binaries from [Using Pre-built Binaries &#8212; OpenROAD Flow documentation](https://openroad-flow-scripts.readthedocs.io/en/latest/user/BuildWithPrebuilt.html)
+   ~~NOTE: The local build failed so i resorted to using prebuilt binaries from [Using Pre-built Binaries &#8212; OpenROAD Flow documentation](https://openroad-flow-scripts.readthedocs.io/en/latest/user/BuildWithPrebuilt.html)~~
    
-   ![](assets/2025-10-22-22-21-59-image.png)
+   ![](assets/2025-10-25-14-17-23-image.png)
+
+
 
 4. verifying installation
    
    ```shell
    source ./env.sh
-   yosys -help  
-   openroad -help
+   yosys -V  
+   openroad -version
    ```
    
-    ![](assets/2025-10-22-22-21-34-image.png)
+    ![](assets/2025-10-25-14-16-57-image.png)
+
+## Execute Floorplan and Placement
+
+### Create floorplan
+
+```
+make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk floorplan
+```
+
+![](assets/2025-10-25-14-47-51-image.png)
 
 
