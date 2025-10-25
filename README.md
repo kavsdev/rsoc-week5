@@ -56,9 +56,9 @@
 
 ## Execute Floorplan and Placement
 
-NOTE ./build
+### Flow for example design
 
-### Create floorplan
+#### Create floorplan
 
 ```shell
 YOSYS_EXE=/OpenROAD-flow-scripts/tools/yosys/yosys  
@@ -76,7 +76,7 @@ make gui_floorplan
 
 ![](assets/2025-10-25-18-52-14-image.png)
 
-### Create placement
+#### Create placement
 
 ```shell
 YOSYS_EXE=/OpenROAD-flow-scripts/tools/yosys/yosys  
@@ -94,14 +94,14 @@ make gui_place
 
 ![](assets/2025-10-25-18-55-57-image.png)
 
-### OpenRoad flow for vsdbabysoc
+### Flow for vsdbabysoc
 
 Add `YOSYS_EXE=/OpenROAD-flow-scripts/tools/yosys/yosys  
 OPENROAD_EXE=/OpenROAD-flow-scripts/tools/OpenROAD/build/bin/openroad` to `env.sh`
 
 cd `OpenROAD-flow-scripts/flow`
 
-### Run synthesis
+#### Run synthesis
 
 ```shell
 make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk synth
@@ -109,7 +109,7 @@ make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk synth
 
 ![](assets/2025-10-25-19-04-50-image.png)
 
-### Run Floorplan
+#### Run Floorplan
 
 ```shell
 make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk floorplan
@@ -123,7 +123,7 @@ make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk gui_floorplan
 
 ![](assets/2025-10-25-19-06-43-image.png)
 
-### Run Placement
+#### Run Placement
 
 ```shell
 make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk place
